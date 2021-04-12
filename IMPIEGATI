@@ -1,0 +1,34 @@
+group: esercizio IMPIEGATI
+
+description[[ Esercizio IMPIEGATI ]]
+
+IMPIEGATI = {CodImpiegato:string Nome:string Cognome:string Sede:string Ruolo:string Stipendio:number
+-- chiave primaria CodImpiegato
+
+'E001' 'Carlo' 'Rossi' 'S01' 'Analista' 2000
+'E002' 'Mario' 'Verdi' 'S02' 'Sistemista' 1500
+'E003' 'Maria' 'Bianchi' 'S01' 'Programmatore' 1000
+'E004' 'Caterina' 'Gialli' 'S03' 'Programmatore' 1000
+'E005' 'Ennio' 'Neri' 'S02' 'Analista' 2500
+'E006' 'Flavio' 'Grigi' 'S01' 'Sistemista' 1400
+'E007' 'Giuseppe' 'Biondi' 'S01' 'Responsabile' 3200
+'E008' 'Giorgia' 'Mori' 'S02' 'Responsabile' 3000
+'E009' 'Carlo' 'Fulvi' 'S03' 'Responsabile' 3500
+}
+
+SEDI = {Sede:string CodResponsabile:string Cittຳtring
+-- chiave primaria Sede
+-- chiave importata CodResponsabile:IMPIEGATI
+'S01' 'E007' 'Milano' 
+'S02' 'E008' 'Bologna'
+'S03' 'E009' 'Milano'
+}
+
+PROGETTI= {CodProgetto:string Sede:string
+-- chiave primaria CodProgetto,Sede
+-- chiavi importate Sede:SEDI
+
+'P01' 'S01' 
+'P01' 'S02'
+'P02' 'S02'
+}
